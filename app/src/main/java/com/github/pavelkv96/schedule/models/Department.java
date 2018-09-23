@@ -18,47 +18,49 @@ package com.github.pavelkv96.schedule.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.google.gson.annotations.SerializedName;
 
 public class Department extends BaseEntity implements Parcelable {
-	
-	private String title;
 
-	private Department(Parcel in) {
-		super(in);
-		id = in.readInt();
-		title = in.readString();
-	}
+    @SerializedName("title")
+    private String title;
 
-	public String getTitle() {
-		return title;
-	}
+    private Department(Parcel in) {
+        super(in);
+        id = in.readInt();
+        title = in.readString();
+    }
 
-	@Override
-	public String toString() {
-		return title;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	@Override
-	public void writeToParcel(Parcel dest, int flags) {
-		super.writeToParcel(dest, flags);
-		dest.writeInt(id);
-		dest.writeString(title);
-	}
+    @Override
+    public String toString() {
+        return title;
+    }
 
-	@Override
-	public int describeContents() {
-		return 0;
-	}
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
+        dest.writeInt(id);
+        dest.writeString(title);
+    }
 
-	public static final Creator<Department> CREATOR = new Creator<Department>() {
-		@Override
-		public Department createFromParcel(Parcel in) {
-			return new Department(in);
-		}
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
-		@Override
-		public Department[] newArray(int size) {
-			return new Department[size];
-		}
-	};
+    public static final Creator<Department> CREATOR = new Creator<Department>() {
+        @Override
+        public Department createFromParcel(Parcel in) {
+            return new Department(in);
+        }
+
+        @Override
+        public Department[] newArray(int size) {
+            return new Department[size];
+        }
+    };
 }

@@ -16,12 +16,13 @@
 
 package com.github.pavelkv96.schedule.api;
 
-import com.github.pavelkv96.schedule.models.Departments;
-import com.github.pavelkv96.schedule.models.Faculties;
-import com.github.pavelkv96.schedule.models.Groups;
+import com.github.pavelkv96.schedule.models.Department;
+import com.github.pavelkv96.schedule.models.Entities;
+import com.github.pavelkv96.schedule.models.Faculty;
+import com.github.pavelkv96.schedule.models.Group;
 import com.github.pavelkv96.schedule.models.Schedule;
 import com.github.pavelkv96.schedule.models.Student;
-import com.github.pavelkv96.schedule.models.Teachers;
+import com.github.pavelkv96.schedule.models.Teacher;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -32,19 +33,19 @@ import retrofit2.http.Query;
 public interface ScheduleApi {
 
     @GET("getDepartments")
-    Call<Departments> getDepartments();
+    Call<Entities<Department>> getDepartments();
 
     @GET("getDepartments")
-    Call<Departments> getDepartments(@Query("lang") String lang);
+    Call<Entities<Department>> getDepartments(@Query("lang") String lang);
 
     @GET("getFaculties")
-    Call<Faculties> getFaculties(@Query("lang") String lang);
+    Call<Entities<Faculty>> getFaculties(@Query("lang") String lang);
 
     @GET("getGroups")
-    Call<Groups> getGroups(@Query("departmentId") int departmentId, @Query("facultyId") int facultyId, @Query("course") int course, @Query("lang") String lang);
+    Call<Entities<Group>> getGroups(@Query("departmentId") int departmentId, @Query("facultyId") int facultyId, @Query("course") int course, @Query("lang") String lang);
 
     @GET("getTeachers?sort=surname,name&fields=surname,name,patronym,post")
-    Call<Teachers> getTeachers(@Query("lang") String lang);
+    Call<Entities<Teacher>> getTeachers(@Query("lang") String lang);
 
     @GET("getStudent")
     Call<Student> getStudent(@Query("login") String login, @Query("lang") String lang);

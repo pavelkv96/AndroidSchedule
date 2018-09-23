@@ -18,9 +18,11 @@ package com.github.pavelkv96.schedule.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.google.gson.annotations.SerializedName;
 
 public class Faculty extends BaseEntity implements Parcelable {
 
+	@SerializedName("title")
 	private String title;
 
 	public String getTitle() {

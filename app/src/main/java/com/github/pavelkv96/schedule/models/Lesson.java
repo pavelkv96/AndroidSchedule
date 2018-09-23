@@ -23,14 +23,23 @@ import java.util.List;
 
 public class Lesson implements Parcelable {
 
+    @SerializedName("timeStart")
     private String timeStart;
+    @SerializedName("timeEnd")
     private String timeEnd;
+    @SerializedName("type")
     private String type;
+    @SerializedName("title")
     private String title;
+    @SerializedName("address")
     private String address;
+    @SerializedName("room")
     private String room;
+    @SerializedName("groups")
     private List<Group> groups;
+    @SerializedName("subgroup")
     private Subgroup subgroup;
+    @SerializedName("teacher")
     private Teacher teacher;
 
     public String getTimeStart() {
@@ -58,14 +67,15 @@ public class Lesson implements Parcelable {
     }
 
     public String getGroups() {
-        String groupsList = "";
+        StringBuilder groupsList = new StringBuilder();
         if (groups != null) {
             for (int i = 0; i < groups.size(); i++) {
-                groupsList += groups.get(i).getTitle();
-                if (i + 1 != groups.size())
-                    groupsList += "\n";
+                groupsList.append(groups.get(i).getTitle());
+                if (i + 1 != groups.size()) {
+                    groupsList.append("\n");
+                }
             }
-            return groupsList;
+            return groupsList.toString();
         }
         return null;
     }
@@ -77,11 +87,6 @@ public class Lesson implements Parcelable {
     public Teacher getTeacher() {
         return teacher;
     }
-
-    /*@Override
-    public String toString() {
-        return timeStart + " " + type + " " + title + " \n" + timeEnd + " " + address + " " + room + " \n" + teacher.getFullname();
-    }*/
 
     private Lesson(Parcel in) {
         timeStart = in.readString();

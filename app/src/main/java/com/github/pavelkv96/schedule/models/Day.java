@@ -18,60 +18,65 @@ package com.github.pavelkv96.schedule.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class Day implements Parcelable {
 
+    @SerializedName("num")
     private int num;
+    @SerializedName("count")
     private int count;
+    @SerializedName("date")
     private String date;
-	private List<Lesson> lessons;
+    @SerializedName("lessons")
+    private List<Lesson> lessons;
 
-	public int getNum() {
-		return num;
-	}
+    public int getNum() {
+        return num;
+    }
 
-	public int getCount() {
-		return count;
-	}
+    public int getCount() {
+        return count;
+    }
 
-	public String getDate() {
-		return date;
-	}
+    public String getDate() {
+        return date;
+    }
 
-	public List<Lesson> getLessons() {
-		return lessons;
-	}
+    public List<Lesson> getLessons() {
+        return lessons;
+    }
 
-	private Day(Parcel in) {
-		num = in.readInt();
-		count = in.readInt();
-		date = in.readString();
-		lessons = in.createTypedArrayList(Lesson.CREATOR);
-	}
+    private Day(Parcel in) {
+        num = in.readInt();
+        count = in.readInt();
+        date = in.readString();
+        lessons = in.createTypedArrayList(Lesson.CREATOR);
+    }
 
-	public static final Creator<Day> CREATOR = new Creator<Day>() {
-		@Override
-		public Day createFromParcel(Parcel in) {
-			return new Day(in);
-		}
+    public static final Creator<Day> CREATOR = new Creator<Day>() {
+        @Override
+        public Day createFromParcel(Parcel in) {
+            return new Day(in);
+        }
 
-		@Override
-		public Day[] newArray(int size) {
-			return new Day[size];
-		}
-	};
+        @Override
+        public Day[] newArray(int size) {
+            return new Day[size];
+        }
+    };
 
-	@Override
-	public int describeContents() {
-		return 0;
-	}
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
-	@Override
-	public void writeToParcel(Parcel dest, int flags) {
-		dest.writeInt(num);
-		dest.writeInt(count);
-		dest.writeString(date);
-		dest.writeTypedList(lessons);
-	}
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(num);
+        dest.writeInt(count);
+        dest.writeString(date);
+        dest.writeTypedList(lessons);
+    }
 }

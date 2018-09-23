@@ -22,67 +22,70 @@ import com.google.gson.annotations.SerializedName;
 
 public class Group extends BaseEntity implements Parcelable {
 
-	@SerializedName("title")
-	private String title;
-	private int course;
-	private int students;
-	private Department department;
-	private Faculty faculty;
+    @SerializedName("title")
+    private String title;
+    @SerializedName("course")
+    private int course;
+    @SerializedName("students")
+    private int students;
+    @SerializedName("department")
+    private Department department;
+    @SerializedName("faculty")
+    private Faculty faculty;
 
-	public String getTitle() {
-		return title;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public Integer getCourse() {
-		return course;
-	}
+    public Integer getCourse() {
+        return course;
+    }
 
-	public Integer getStudents() {
-		return students;
-	}
+    public Integer getStudents() {
+        return students;
+    }
 
-	@Override
-	public String toString() {
-		return title;
-	}
+    @Override
+    public String toString() {
+        return title;
+    }
 
-	private Group(Parcel in) {
-		super(in);
-		id = in.readInt();
-		title = in.readString();
-		course = in.readInt();
-		students = in.readInt();
-		department = in.readParcelable(Department.class.getClassLoader());
-		faculty = in.readParcelable(Faculty.class.getClassLoader());
-	}
+    private Group(Parcel in) {
+        super(in);
+        id = in.readInt();
+        title = in.readString();
+        course = in.readInt();
+        students = in.readInt();
+        department = in.readParcelable(Department.class.getClassLoader());
+        faculty = in.readParcelable(Faculty.class.getClassLoader());
+    }
 
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
+        dest.writeInt(id);
+        dest.writeString(title);
+        dest.writeInt(course);
+        dest.writeInt(students);
+        dest.writeParcelable(department, flags);
+        dest.writeParcelable(faculty, flags);
+    }
 
-	@Override
-	public void writeToParcel(Parcel dest, int flags) {
-		super.writeToParcel(dest, flags);
-		dest.writeInt(id);
-		dest.writeString(title);
-		dest.writeInt(course);
-		dest.writeInt(students);
-		dest.writeParcelable(department, flags);
-		dest.writeParcelable(faculty, flags);
-	}
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
-	@Override
-	public int describeContents() {
-		return 0;
-	}
+    public static final Creator<Group> CREATOR = new Creator<Group>() {
+        @Override
+        public Group createFromParcel(Parcel in) {
+            return new Group(in);
+        }
 
-	public static final Creator<Group> CREATOR = new Creator<Group>() {
-		@Override
-		public Group createFromParcel(Parcel in) {
-			return new Group(in);
-		}
-
-		@Override
-		public Group[] newArray(int size) {
-			return new Group[size];
-		}
-	};
+        @Override
+        public Group[] newArray(int size) {
+            return new Group[size];
+        }
+    };
 
 }

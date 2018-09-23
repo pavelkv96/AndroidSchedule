@@ -21,19 +21,16 @@ import java.util.List;
 
 public class Schedule {
 
-	@SerializedName("count")
-	private int count;
-	@SerializedName("days")
-	private List<Day> days;
-	
-	public Schedule() {
-	}
+    @SerializedName("count")
+    private int count;
+    @SerializedName("days")
+    private List<Day> days;
 
-	public List<Day> getDays() {
-		return days;
-	}
+    public List<Day> getDays() {
+        return days;
+    }
 
-	public int getCount() {
-		return count;
-	}
+    public int getCount() {
+        return count;
+    }
 }

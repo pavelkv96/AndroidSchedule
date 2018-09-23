@@ -22,6 +22,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import org.junit.Assert;
 import retrofit2.Call;
 import retrofit2.mock.Calls;
@@ -32,13 +33,13 @@ import retrofit2.mock.Calls;
 public class Mocks {
 
     @NonNull
-    public static <T> Call<T> getCall(final String pNameFile, Class<T> tClass) {
-        return Calls.response(getGsonObject(pNameFile, tClass));
+    public static <T extends Type, E> Call<E> getCall(final String pNameFile, T type) {
+        return (Call<E>) Calls.response(getGsonObject(pNameFile, type));
     }
 
     @NonNull
-    private static <T> T getGsonObject(final String pNameFile, Class<T> tClass) {
-        return new Gson().fromJson(stream(pNameFile), tClass);
+    private static <T extends Type, E> E getGsonObject(final String pNameFile, T type) {
+        return new Gson().fromJson(stream(pNameFile), type);
     }
 
     @NonNull

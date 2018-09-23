@@ -16,6 +16,16 @@
 
 package com.github.pavelkv96.schedule.models;
 
-public class Departments extends BaseEntities<Department> {
-	
+import com.google.gson.annotations.SerializedName;
+import java.util.List;
+
+public class Entities<E> {
+
+	@SerializedName("items")
+	private List<E> items;
+
+	public List<E> getItems() {
+		return items;
+	}
+
 }
