@@ -16,7 +16,7 @@
 
 package com.github.pavelkv96.schedule.utils;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.IOException;
