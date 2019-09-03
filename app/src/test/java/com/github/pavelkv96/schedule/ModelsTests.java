@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The Android Open Source Project
+ * Copyright (C) 2019 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,12 @@ package com.github.pavelkv96.schedule;
 
 import static org.mockito.Mockito.when;
 
-import com.github.pavelkv96.schedule.api.ScheduleApi;
-import com.github.pavelkv96.schedule.models.Department;
-import com.github.pavelkv96.schedule.models.Entities;
-import com.github.pavelkv96.schedule.models.Faculty;
-import com.github.pavelkv96.schedule.models.Group;
-import com.github.pavelkv96.schedule.models.Schedule;
+import com.github.pavelkv96.schedule.data.network.api.ScheduleApi;
+import com.github.pavelkv96.schedule.data.storage.models.Department;
+import com.github.pavelkv96.schedule.data.storage.models.Entities;
+import com.github.pavelkv96.schedule.data.storage.models.Faculty;
+import com.github.pavelkv96.schedule.data.storage.models.Group;
+import com.github.pavelkv96.schedule.data.storage.models.Schedule;
 import com.github.pavelkv96.schedule.utils.Mocks;
 import com.google.gson.reflect.TypeToken;
 import java.io.IOException;

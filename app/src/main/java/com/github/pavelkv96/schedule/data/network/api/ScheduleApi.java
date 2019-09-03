@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The Android Open Source Project
+ * Copyright (C) 2019 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,16 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.github.pavelkv96.schedule.data.network.api;
 
-package com.github.pavelkv96.schedule.api;
-
-import com.github.pavelkv96.schedule.models.Department;
-import com.github.pavelkv96.schedule.models.Entities;
-import com.github.pavelkv96.schedule.models.Faculty;
-import com.github.pavelkv96.schedule.models.Group;
-import com.github.pavelkv96.schedule.models.Schedule;
-import com.github.pavelkv96.schedule.models.Student;
-import com.github.pavelkv96.schedule.models.Teacher;
+import com.github.pavelkv96.schedule.data.storage.models.Department;
+import com.github.pavelkv96.schedule.data.storage.models.Entities;
+import com.github.pavelkv96.schedule.data.storage.models.Faculty;
+import com.github.pavelkv96.schedule.data.storage.models.Group;
+import com.github.pavelkv96.schedule.data.storage.models.Schedule;
+import com.github.pavelkv96.schedule.data.storage.models.Student;
+import com.github.pavelkv96.schedule.data.storage.models.Teacher;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
