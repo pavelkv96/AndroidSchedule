@@ -19,9 +19,7 @@ import com.github.pavelkv96.schedule.data.network.api.ScheduleApi
 import com.github.pavelkv96.schedule.data.storage.models.*
 import com.github.pavelkv96.schedule.utils.Mocks.getCall
 import com.google.gson.reflect.TypeToken
-import org.junit.After
 import org.junit.Assert.*
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mockito
@@ -35,24 +33,14 @@ import org.mockito.junit.MockitoJUnitRunner
 @RunWith(MockitoJUnitRunner::class)
 class ModelsTests {
 
-    private var mockScheduleApi: ScheduleApi? = null
-
-    @Before
-    fun setUp() {
-        mockScheduleApi = Mockito.mock(ScheduleApi::class.java)
-    }
-
-    @After
-    fun cleanUp() {
-        mockScheduleApi = null
-    }
+    private var mockScheduleApi: ScheduleApi = Mockito.mock(ScheduleApi::class.java)
 
     @Test
     fun departmentsModel() {
         val type = TypeToken.getParameterized(Entities::class.java, Department::class.java).type
         val call = getCall<Entities<Department>>("departments.json", type)
-        `when`(mockScheduleApi!!.getDepartments("")).thenReturn(call)
-        val departmentCall = mockScheduleApi!!.getDepartments("")
+        `when`(mockScheduleApi.getDepartments("")).thenReturn(call)
+        val departmentCall = mockScheduleApi.getDepartments("")
 
         val entities = departmentCall.execute().body()
         assertNotNull(entities)
@@ -79,8 +67,8 @@ class ModelsTests {
     fun facultiesModel() {
         val type = TypeToken.getParameterized(Entities::class.java, Faculty::class.java).type
         val call = getCall<Entities<Faculty>>("faculties.json", type)
-        `when`(mockScheduleApi!!.getFaculties("")).thenReturn(call)
-        val groupsCall = mockScheduleApi!!.getFaculties("")
+        `when`(mockScheduleApi.getFaculties("")).thenReturn(call)
+        val groupsCall = mockScheduleApi.getFaculties("")
 
         val entities = groupsCall.execute().body()
         assertNotNull(entities)
@@ -104,8 +92,8 @@ class ModelsTests {
     fun groupsModel() {
         val type = TypeToken.getParameterized(Entities::class.java, Group::class.java).type
         val call = getCall<Entities<Group>>("groups.json", type)
-        `when`(mockScheduleApi!!.getGroups(0, 0, 0, "")).thenReturn(call)
-        val groupsCall = mockScheduleApi!!.getGroups(0, 0, 0, "")
+        `when`(mockScheduleApi.getGroups(0, 0, 0, "")).thenReturn(call)
+        val groupsCall = mockScheduleApi.getGroups(0, 0, 0, "")
 
         val entities = groupsCall.execute().body()
         assertNotNull(entities)
@@ -129,8 +117,8 @@ class ModelsTests {
     fun teachersModel() {
         val type = TypeToken.getParameterized(Entities::class.java, Teacher::class.java).type
         val call = getCall<Entities<Teacher>>("teachers.json", type)
-        `when`(mockScheduleApi!!.getTeachers("ru_RU")).thenReturn(call)
-        val groupsCall = mockScheduleApi!!.getTeachers("ru_RU")
+        `when`(mockScheduleApi.getTeachers("ru_RU")).thenReturn(call)
+        val groupsCall = mockScheduleApi.getTeachers("ru_RU")
 
         val entities = groupsCall.execute().body()
         assertNotNull(entities)
@@ -165,8 +153,8 @@ class ModelsTests {
     @Test
     fun studentModel() {
         val call = getCall<Student>("student.json", Student::class.java)
-        `when`(mockScheduleApi!!.getStudent("some_login", "ru_RU")).thenReturn(call)
-        val studentCall = mockScheduleApi!!.getStudent("some_login", "ru_RU")
+        `when`(mockScheduleApi.getStudent("some_login", "ru_RU")).thenReturn(call)
+        val studentCall = mockScheduleApi.getStudent("some_login", "ru_RU")
 
         val student = studentCall.execute().body()
         assertNotNull(student)
@@ -190,8 +178,8 @@ class ModelsTests {
     @Test
     fun teacherScheduleModel() {
         val call = getCall<Schedule>("teacher_schedule.json", Schedule::class.java)
-        `when`(mockScheduleApi!!.getTeacherSchedule(0, "", "", "")).thenReturn(call)
-        val scheduleCall = mockScheduleApi!!.getTeacherSchedule(0, "", "", "")
+        `when`(mockScheduleApi.getTeacherSchedule(0, "", "", "")).thenReturn(call)
+        val scheduleCall = mockScheduleApi.getTeacherSchedule(0, "", "", "")
 
         val schedule = scheduleCall.execute().body()
         assertNotNull(schedule)
@@ -230,8 +218,8 @@ class ModelsTests {
     @Test
     fun studentScheduleModel() {
         val call = getCall<Schedule>("group_schedule_by_student_id.json", Schedule::class.java)
-        `when`(mockScheduleApi!!.getStudentSchedule(0, "", "", "")).thenReturn(call)
-        val scheduleCall = mockScheduleApi!!.getStudentSchedule(0, "", "", "")
+        `when`(mockScheduleApi.getStudentSchedule(0, "", "", "")).thenReturn(call)
+        val scheduleCall = mockScheduleApi.getStudentSchedule(0, "", "", "")
 
         val schedule = scheduleCall.execute().body()
         assertNotNull(schedule)
@@ -271,8 +259,8 @@ class ModelsTests {
     @Test
     fun groupScheduleModel() {
         val call = getCall<Schedule>("group_schedule_by_group_id.json", Schedule::class.java)
-        `when`(mockScheduleApi!!.getGroupSchedule(0, "", "", "")).thenReturn(call)
-        val scheduleCall = mockScheduleApi!!.getGroupSchedule(0, "", "", "")
+        `when`(mockScheduleApi.getGroupSchedule(0, "", "", "")).thenReturn(call)
+        val scheduleCall = mockScheduleApi.getGroupSchedule(0, "", "", "")
 
         val schedule = scheduleCall.execute().body()
         assertNotNull(schedule)
@@ -313,8 +301,8 @@ class ModelsTests {
     fun error() {
         val type = TypeToken.getParameterized(Entities::class.java, Department::class.java).type
         val call = getCall<Entities<Department>>("error.json", type)
-        `when`(mockScheduleApi!!.getDepartments("")).thenReturn(call)
-        val departmentCall = mockScheduleApi!!.getDepartments("")
+        `when`(mockScheduleApi.getDepartments("")).thenReturn(call)
+        val departmentCall = mockScheduleApi.getDepartments("")
 
         val entities = departmentCall.execute().body()
         assertNotNull(entities)
