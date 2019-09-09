@@ -16,7 +16,7 @@
 package com.github.pavelkv96.schedule
 
 import com.github.pavelkv96.schedule.data.network.api.ScheduleApi
-import com.github.pavelkv96.schedule.data.storage.models.*
+import com.github.pavelkv96.schedule.data.network.restmodels.*
 import com.github.pavelkv96.schedule.utils.Mocks.getCall
 import com.google.gson.reflect.TypeToken
 import org.junit.Assert.*

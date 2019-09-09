@@ -13,16 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.pavelkv96.schedule.data.storage.models
+package com.github.pavelkv96.schedule.data.network.restmodels
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
 
-@Parcelize
-class Day(
-    @SerializedName("num") val num: Int,
-    @SerializedName("count") val count: Int,
-    @SerializedName("date") val date: String?,
-    @SerializedName("lessons") val lessons: List<Lesson>?
-) : Parcelable
+class Entities<E : Entity>(
+    @SerializedName("items") val items: List<E>?
+) : BaseEntity()

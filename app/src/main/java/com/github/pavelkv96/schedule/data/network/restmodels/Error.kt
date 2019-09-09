@@ -13,7 +13,7 @@
   * See the License for the specific language governing permissions and
   * limitations under the License.
  */
-package com.github.pavelkv96.schedule.data.storage.models
+package com.github.pavelkv96.schedule.data.network.restmodels
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

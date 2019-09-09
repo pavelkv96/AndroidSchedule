@@ -13,17 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.pavelkv96.schedule.data.storage.models
+package com.github.pavelkv96.schedule.data.network.restmodels
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-class Group(
-    @SerializedName("title") val title: String?,
-    @SerializedName("course") val course: Int,
-    @SerializedName("students") val students: Int,
-    @SerializedName("department") val department: Department?,
-    @SerializedName("faculty") val faculty: Faculty?
-) : Entity(), Parcelable
+class Schedule(
+        @SerializedName("count")
+        val count: Int = 0,
+        @SerializedName("days")
+        val days: List<Day>? = null
+) : BaseEntity(), Parcelable

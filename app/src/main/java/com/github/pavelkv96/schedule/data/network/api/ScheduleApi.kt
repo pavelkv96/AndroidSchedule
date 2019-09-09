@@ -15,13 +15,13 @@
  */
 package com.github.pavelkv96.schedule.data.network.api
 
-import com.github.pavelkv96.schedule.data.storage.models.Department
-import com.github.pavelkv96.schedule.data.storage.models.Entities
-import com.github.pavelkv96.schedule.data.storage.models.Faculty
-import com.github.pavelkv96.schedule.data.storage.models.Group
-import com.github.pavelkv96.schedule.data.storage.models.Schedule
-import com.github.pavelkv96.schedule.data.storage.models.Student
-import com.github.pavelkv96.schedule.data.storage.models.Teacher
+import com.github.pavelkv96.schedule.data.network.restmodels.Department
+import com.github.pavelkv96.schedule.data.network.restmodels.Entities
+import com.github.pavelkv96.schedule.data.network.restmodels.Faculty
+import com.github.pavelkv96.schedule.data.network.restmodels.Group
+import com.github.pavelkv96.schedule.data.network.restmodels.Schedule
+import com.github.pavelkv96.schedule.data.network.restmodels.Student
+import com.github.pavelkv96.schedule.data.network.restmodels.Teacher
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
