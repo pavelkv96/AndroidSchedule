@@ -37,6 +37,8 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$androidxVersion"
     implementation "com.google.android.material:material:$materialVersion"
 
+    implementation "androidx.lifecycle:lifecycle-extensions:$livecycleVersion"
+
     implementation "com.squareup.retrofit2:retrofit:$retrofit2"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit2"
     implementation "com.squareup.retrofit2:retrofit-mock:$retrofit2"
