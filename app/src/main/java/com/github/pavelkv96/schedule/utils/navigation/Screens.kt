@@ -18,6 +18,7 @@ package com.github.pavelkv96.schedule.utils.navigation
 import androidx.fragment.app.Fragment
 import com.github.pavelkv96.schedule.ui.flow.HomeFragment
 import com.github.pavelkv96.schedule.ui.fragments.*
+import com.github.pavelkv96.schedule.ui.fragments.about.AboutFragment
 import ru.terrakok.cicerone.android.support.SupportAppScreen
 
 class Screens(private val key: String, private val data: Any? = null) : SupportAppScreen() {

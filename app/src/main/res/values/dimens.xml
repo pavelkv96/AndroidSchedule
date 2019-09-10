@@ -1,8 +1,52 @@
 <resources>
-  <!-- Default screen margins, per the Android Design guidelines. -->
-  <dimen name="activity_horizontal_margin">16dp</dimen>
-  <dimen name="activity_vertical_margin">16dp</dimen>
-  <dimen name="nav_header_vertical_spacing">8dp</dimen>
-  <dimen name="nav_header_height">176dp</dimen>
-  <dimen name="fab_margin">16dp</dimen>
+  <!-- font sizes -->
+  <dimen name="font_24sp">24sp</dimen>
+  <dimen name="font_16sp">16sp</dimen>
+  <dimen name="font_12sp">12sp</dimen>
+
+  <!-- typical size views -->
+  <dimen name="size_32dp">32dp</dimen>
+  <dimen name="size_24dp">24dp</dimen>
+  <dimen name="size_16dp">16dp</dimen>
+  <dimen name="size_8dp">8dp</dimen>
+  <dimen name="size_4dp">4dp</dimen>
+
+  <!-- typical width views -->
+  <dimen name="width_32dp">32dp</dimen>
+  <dimen name="width_24dp">24dp</dimen>
+  <dimen name="width_16dp">16dp</dimen>
+  <dimen name="width_8dp">8dp</dimen>
+  <dimen name="width_4dp">4dp</dimen>
+
+  <!-- typical height views -->
+  <dimen name="height_32dp">32dp</dimen>
+  <dimen name="height_24dp">24dp</dimen>
+  <dimen name="height_16dp">16dp</dimen>
+  <dimen name="height_8dp">8dp</dimen>
+  <dimen name="height_4dp">4dp</dimen>
+
+  <!-- typical padding views -->
+  <dimen name="padding_32dp">32dp</dimen>
+  <dimen name="padding_24dp">24dp</dimen>
+  <dimen name="padding_16dp">16dp</dimen>
+  <dimen name="padding_8dp">8dp</dimen>
+  <dimen name="padding_4dp">4dp</dimen>
+
+  <!-- typical margin between two views -->
+  <dimen name="margin_32dp">32dp</dimen>
+  <dimen name="margin_24dp">24dp</dimen>
+  <dimen name="margin_16dp">16dp</dimen>
+  <dimen name="margin_8dp">8dp</dimen>
+  <dimen name="margin_4dp">4dp</dimen>
+
+  <!-- typical spacing between two views -->
+  <dimen name="spacing_32dp">32dp</dimen>
+  <dimen name="spacing_24dp">24dp</dimen>
+  <dimen name="spacing_16dp">16dp</dimen>
+  <dimen name="spacing_8dp">8dp</dimen>
+  <dimen name="spacing_4dp">4dp</dimen>
+
+  <!-- typical sizes of views -->
+  <dimen name="icon_size_24dp">24dp</dimen>
+  <dimen name="nav_header_height_176dp">176dp</dimen>
 </resources>
