@@ -15,10 +15,12 @@
  */
 package com.github.pavelkv96.schedule.ui
 
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.github.pavelkv96.schedule.App
 import com.github.pavelkv96.schedule.R
+import com.github.pavelkv96.schedule.data.storage.preferenses.PreferenceStore
 import com.github.pavelkv96.schedule.utils.base.BaseFlowFragment
 import com.github.pavelkv96.schedule.utils.navigation.AppNavigator
 import com.github.pavelkv96.schedule.utils.navigation.MyRouter
@@ -33,6 +35,10 @@ class MainActivity : AppCompatActivity() {
     internal lateinit var router: MyRouter
 
     private val tag = MainActivity::class.java.simpleName
+
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(App.instance.setLocale(newBase, PreferenceStore.getLanguage()))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

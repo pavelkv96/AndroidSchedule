@@ -35,6 +35,7 @@ dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:${rootProject.kotlin}"
 
     implementation "androidx.appcompat:appcompat:$androidxVersion"
+    implementation "androidx.preference:preference-ktx:$androidxVersion"
     implementation "com.google.android.material:material:$materialVersion"
 
     implementation "androidx.lifecycle:lifecycle-extensions:$livecycleVersion"

@@ -16,22 +16,57 @@
 package com.github.pavelkv96.schedule
 
 import android.app.Application
+import android.content.Context
+import android.content.SharedPreferences
+import android.content.res.Configuration
+import android.os.Build
+import androidx.preference.PreferenceManager
 import com.github.pavelkv96.schedule.utils.navigation.MyRouter
 import ru.terrakok.cicerone.Cicerone
+import java.util.*
 
 class App : Application() {
+    companion object {
+        lateinit var instance: App
+            private set
+    }
+
     lateinit var cicerone: Cicerone<MyRouter>
         private set
+
+    private lateinit var preference: SharedPreferences
 
     override fun onCreate() {
         super.onCreate()
         instance = this
+        preference = PreferenceManager.getDefaultSharedPreferences(this)
         cicerone = Cicerone.create(MyRouter())
     }
 
-    companion object {
+    @Suppress("deprecation")
+    fun setLocale(context: Context?, language: String): Context? {
+        if (context == null) {
+            return context
+        }
 
-        lateinit var instance: App
-            private set
+        val locale = Locale(language)
+        Locale.setDefault(locale)
+
+        val res = context.resources
+
+        val conf = Configuration(res.configuration)
+
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            conf.setLocale(locale)
+            context.createConfigurationContext(conf)
+        } else {
+            conf.locale = locale
+            res.updateConfiguration(conf, res.displayMetrics)
+            context
+        }
+    }
+
+    fun getPreference(): SharedPreferences {
+        return preference
     }
 }
