@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">ГрДУ Расклад</string>
+  <string name="navigation_drawer_open">Open navigation drawer</string>
+  <string name="navigation_drawer_close">Close navigation drawer</string>
+  <string name="nav_header_title">ГрДУ імя Янкі Купалы</string>
+  <string name="nav_header_subtitle">android.studio@android.com</string>
+  <string name="nav_header_desc">Navigation header</string>
+
+  <!--MENU ACTIONS-->
+  <string name="action_bookmarks">Закладкі</string>
+  <string name="action_student">Студэнту</string>
+  <string name="action_teacher">Выкладчыку</string>
+  <string name="action_group">Групе</string>
+  <string name="action_settings">Налады</string>
+  <string name="action_about">Інфа</string>
+
+  <!--LOCALIZATION DAYS-->
+  <plurals name="pref_title_days">
+    <item quantity="one">%d дзень</item>
+    <item quantity="few">%d дні</item>
+    <item quantity="many">%d дзён</item>
+  </plurals>
+
+  <string name="locale">@string/lang_be_short</string>
+
+  <!--SETTINGS SCREEN-->
+  <string name="general_settings">АГУЛЬНЫЯ НАЛАДЫ</string>
+  <string name="pref_title_languages">Мова</string>
+  <string name="pref_title_dialog_choose_number">Выберыце колькасць дзён</string>
+  <string name="pref_title_number_of_days">Адкрываць расклад на</string>
+  <string name="pref_title_last_schedule">Адкрываць апошні расклад</string>
+  <string name="pref_description_last_schedule">Дазваляе адкрываць апошні загружаны расклад пры кожным запуску праграмы</string>
+</resources>
