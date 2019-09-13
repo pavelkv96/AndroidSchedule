@@ -29,21 +29,13 @@ class AboutAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AboutHolder {
         val from = LayoutInflater.from(parent.context)
-        return AboutHolder(from.inflate(viewType, parent, false), listener)
+        val layout = android.R.layout.simple_list_item_2
+        return AboutHolder(from.inflate(layout, parent, false), listener)
     }
 
-    override fun onBindViewHolder(holder: AboutHolder, position: Int) {
-        holder.bind(items[position])
-    }
+    override fun onBindViewHolder(holder: AboutHolder, position: Int) = holder.bind(items[position])
 
     override fun getItemCount(): Int = items.size
-
-    override fun getItemViewType(position: Int): Int {
-        return when (items[position].description) {
-            is String -> android.R.layout.simple_list_item_2
-            else -> android.R.layout.simple_list_item_1
-        }
-    }
 
     fun setData(newItems: List<AboutItem>?) {
         items = newItems ?: mutableListOf()

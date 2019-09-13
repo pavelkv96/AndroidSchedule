@@ -31,4 +31,14 @@
   <string name="pref_title_number_of_days">Открывать расписание на</string>
   <string name="pref_title_last_schedule">Открывать последнее расписание</string>
   <string name="pref_description_last_schedule">Позволяет открывать последнее загруженное расписание при каждом запуске приложения</string>
+
+  <!--ABOUT SCREEN-->
+  <string name="title_about_open_url">Официальный сайт ГрГУ имени Янки Купалы</string>
+  <string name="description_about_open_url">Открыть в браузере</string>
+  <string name="title_about_contact_developer">Связаться с разработчиком</string>
+  <string name="description_about_contact_developer">Написать Email</string>
+  <string name="title_about_rate_app">Оценить приложение</string>
+  <string name="description_about_rate_app">Открыть в Play Маркет</string>
+  <string name="title_about_version_app">Версия приложения</string>
+  <string name="description_about_version_app">ГрГУ Расписание для Android v%s (build %d)</string>
 </resources>

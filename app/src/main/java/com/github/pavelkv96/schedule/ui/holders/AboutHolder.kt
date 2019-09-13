@@ -17,6 +17,7 @@ package com.github.pavelkv96.schedule.ui.holders
 
 import android.view.View
 import android.widget.TextView
+import com.github.pavelkv96.schedule.BuildConfig
 import com.github.pavelkv96.schedule.data.storage.models.about.AboutItem
 import com.github.pavelkv96.schedule.utils.base.BaseViewHolder
 import com.github.pavelkv96.schedule.utils.base.listeners.ItemClickListener
@@ -25,11 +26,13 @@ class AboutHolder(
     itemView: View, listener: ItemClickListener? = null
 ) : BaseViewHolder<AboutItem>(itemView, listener) {
 
-    private val title: TextView = itemView.findViewById(android.R.id.text1)
+    private val title: TextView? = itemView.findViewById(android.R.id.text1)
     private val description: TextView? = itemView.findViewById(android.R.id.text2)
 
     override fun bind(item: AboutItem) {
-        title.text = item.title
-        description?.text = item.description
+        val context = itemView.context
+        title?.text = context.getString(item.title)
+        val s = context.getString(item.description)
+        description?.text = String.format(s, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE)
     }
 }

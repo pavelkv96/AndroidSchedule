@@ -31,4 +31,14 @@
   <string name="pref_title_number_of_days">Адкрываць расклад на</string>
   <string name="pref_title_last_schedule">Адкрываць апошні расклад</string>
   <string name="pref_description_last_schedule">Дазваляе адкрываць апошні загружаны расклад пры кожным запуску праграмы</string>
+
+  <!--ABOUT SCREEN-->
+  <string name="title_about_open_url">Афіцыйны сайт ГрДУ імя Янкі Купалы</string>
+  <string name="description_about_open_url">Адкрыць у браўзэры</string>
+  <string name="title_about_contact_developer">Скантактавацца з распрацоўшчыкам</string>
+  <string name="description_about_contact_developer">Напісаць Email</string>
+  <string name="title_about_rate_app">Ацаніць праграму</string>
+  <string name="description_about_rate_app">Адкрыць у Play Маркет</string>
+  <string name="title_about_version_app">Версія прыкладанне</string>
+  <string name="description_about_version_app">ГрДУ Расклад для Android v%s (build %d)</string>
 </resources>

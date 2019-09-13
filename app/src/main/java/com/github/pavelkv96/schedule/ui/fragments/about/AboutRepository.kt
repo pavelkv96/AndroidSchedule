@@ -17,24 +17,41 @@ package com.github.pavelkv96.schedule.ui.fragments.about
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.github.pavelkv96.schedule.R
 import com.github.pavelkv96.schedule.data.storage.models.about.AboutItem
 
 object AboutRepository {
 
     fun getFirstData(): LiveData<List<AboutItem>> {
         return MutableLiveData<List<AboutItem>>().apply {
-            Thread(Runnable {
-                Thread.sleep(2000)
-                val list: MutableList<AboutItem> = mutableListOf()
-                list.apply {
-                    add(AboutItem("One", "Two"))
-                    add(AboutItem("Three", "Four"))
-                    add(AboutItem("Five", "Six"))
-                    add(AboutItem("Version application", "GrSU Schedule for Android v1.0.0 (build 1)"))
-                }
-                postValue(list)
+            val list: MutableList<AboutItem> = mutableListOf()
+            list.apply {
+                add(
+                    AboutItem(
+                        R.string.title_about_open_url,
+                        R.string.description_about_open_url
+                    )
+                )
+                add(
+                    AboutItem(
+                        R.string.title_about_contact_developer,
+                        R.string.description_about_contact_developer
+                    )
+                )
+                add(
+                    AboutItem(
+                        R.string.title_about_rate_app,
+                        R.string.description_about_rate_app
+                    )
+                )
+                add(
+                    AboutItem(
+                        R.string.title_about_version_app,
+                        R.string.description_about_version_app
+                    )
+                )
             }
-            ).start()
+            postValue(list)
         }
     }
 }

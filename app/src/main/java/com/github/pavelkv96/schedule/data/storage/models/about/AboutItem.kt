@@ -15,4 +15,6 @@
  */
 package com.github.pavelkv96.schedule.data.storage.models.about
 
-class AboutItem (val title :String, val description: String? = null)
+import androidx.annotation.StringRes
+
+class AboutItem(@param:StringRes var title: Int, @param:StringRes var description: Int)
