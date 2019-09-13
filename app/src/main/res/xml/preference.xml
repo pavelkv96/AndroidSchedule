@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <PreferenceCategory android:title="@string/general_settings">
+    <ListPreference
+      android:defaultValue="@string/lang_en_short"
+      android:entries="@array/pref_languages_titles"
+      android:entryValues="@array/pref_languages_values"
+      android:key="pref_language"
+      android:negativeButtonText="@android:string/cancel"
+      android:summary="@string/lang_en"
+      android:title="@string/pref_title_languages" />
+
+    <com.github.pavelkv96.schedule.ui.custom.NumberPreference
+      android:defaultValue="7"
+      android:dialogTitle="@string/pref_title_dialog_choose_number"
+      android:key="pref_number_of_days"
+      android:negativeButtonText="@android:string/cancel"
+      android:positiveButtonText="@android:string/ok"
+      android:title="@string/pref_title_number_of_days" />
+
+    <SwitchPreferenceCompat
+      android:defaultValue="false"
+      android:key="pref_last_schedule"
+      android:summary="@string/pref_description_last_schedule"
+      android:title="@string/pref_title_last_schedule" />
+  </PreferenceCategory>
+</PreferenceScreen>
