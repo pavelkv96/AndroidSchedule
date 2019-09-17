@@ -18,10 +18,10 @@ package com.github.pavelkv96.schedule.ui.fragments
 import com.github.pavelkv96.schedule.R
 import com.github.pavelkv96.schedule.utils.base.BaseFragment
 
-class MainFragment : BaseFragment() {
-    override fun getLayout(): Int = R.layout.fragment_home
+class BookmarksFragment : BaseFragment() {
+    override fun getLayout(): Int = R.layout.fragment_bookmarks
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = BookmarksFragment()
     }
 }

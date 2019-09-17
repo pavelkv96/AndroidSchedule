@@ -34,7 +34,7 @@ class HomeFragment : BaseFlowFragment(), OnNavigationItemSelectedListener {
 
     private lateinit var mDrawerLayout: DrawerLayout
 
-    override fun start(): Screens = Screens(Screens.main_fragment)
+    override fun start(): Screens = Screens(Screens.bookmarks_fragment)
 
     override fun getLayout(): Int = R.layout.fragment_flow_home
 
@@ -80,7 +80,7 @@ class HomeFragment : BaseFlowFragment(), OnNavigationItemSelectedListener {
 
     override fun onNavigationItemSelected(menu: MenuItem): Boolean {
         when (menu.itemId) {
-            R.id.nav_bookmarks -> Screens.main_fragment
+            R.id.nav_bookmarks -> Screens.bookmarks_fragment
             R.id.nav_teachers -> Screens.teachers_fragment
             R.id.nav_student -> Screens.student_fragment
             R.id.nav_group -> Screens.departments_fragment

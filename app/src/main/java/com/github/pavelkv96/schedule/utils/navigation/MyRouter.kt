@@ -52,7 +52,7 @@ class MyRouter : BaseRouter() {
         val commands = arrayOfNulls<Command>(screens.size + 1)
         commands[0] = BackTo(null)
         if (screens.isNotEmpty()) {
-            commands[1] = Replace(screens[0])
+            commands[1] = Forward(screens[0])
             for (i in 1 until screens.size) {
                 commands[i + 1] = Forward(screens[i])
             }

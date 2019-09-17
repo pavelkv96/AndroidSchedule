@@ -32,7 +32,7 @@ class Screens(private val key: String, private val data: Any? = null) : SupportA
             main_flow -> HomeFragment.newInstance()
             about_fragment -> AboutFragment.newInstance()
             departments_fragment -> DepartmentsListFragment.newInstance()
-            main_fragment -> MainFragment.newInstance()
+            bookmarks_fragment -> BookmarksFragment.newInstance()
             settings_fragment -> SettingsFragment.newInstance()
             student_fragment -> StudentFragment.newInstance()
             teachers_fragment -> TeachersListFragment.newInstance()
@@ -45,7 +45,7 @@ class Screens(private val key: String, private val data: Any? = null) : SupportA
         const val main_flow = "home_flow"
         const val about_fragment = "about_fragment"
         const val departments_fragment = "departments_fragment"
-        const val main_fragment = "main_fragment"
+        const val bookmarks_fragment = "bookmarks_fragment"
         const val settings_fragment = "settings_fragment"
         const val student_fragment = "student_fragment"
         const val teachers_fragment = "teachers_fragment"
