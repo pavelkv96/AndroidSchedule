@@ -18,6 +18,7 @@ package com.github.pavelkv96.schedule.ui.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.github.pavelkv96.schedule.R
 import com.github.pavelkv96.schedule.data.storage.models.about.AboutItem
 import com.github.pavelkv96.schedule.ui.holders.AboutHolder
 import com.github.pavelkv96.schedule.utils.base.listeners.ItemClickListener
@@ -29,8 +30,7 @@ class AboutAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AboutHolder {
         val from = LayoutInflater.from(parent.context)
-        val layout = android.R.layout.simple_list_item_2
-        return AboutHolder(from.inflate(layout, parent, false), listener)
+        return AboutHolder(from.inflate(R.layout.item_description, parent, false), listener)
     }
 
     override fun onBindViewHolder(holder: AboutHolder, position: Int) = holder.bind(items[position])

@@ -26,7 +26,7 @@
     android:visibility="gone"
     tools:visibility="visible"
     tools:itemCount="4"
-    tools:listitem="@android:layout/simple_list_item_2" />
+    tools:listitem="@layout/item_description" />
 
   <ProgressBar
     android:id="@+id/progress_bar"

@@ -48,7 +48,7 @@ class AboutFragment : BaseFragment(), ItemClickListener {
 
         val recyclerView = view.findViewById<RecyclerView?>(R.id.rv_about)
         val progressBar = view.findViewById<ProgressBar?>(R.id.progress_bar)
-        val aboutAdapter = AboutAdapter(mutableListOf(), this)
+        val aboutAdapter = AboutAdapter(listener = this)
 
         recyclerView?.apply {
             adapter = aboutAdapter
