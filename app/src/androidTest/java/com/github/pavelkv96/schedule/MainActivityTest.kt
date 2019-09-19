@@ -28,6 +28,7 @@ import com.github.pavelkv96.schedule.ui.MainActivity
 import com.github.pavelkv96.schedule.ui.flow.HomeFragment
 import com.github.pavelkv96.schedule.ui.fragments.*
 import com.github.pavelkv96.schedule.ui.fragments.about.AboutFragment
+import com.github.pavelkv96.schedule.ui.fragments.teacher.TeachersListFragment
 import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test
