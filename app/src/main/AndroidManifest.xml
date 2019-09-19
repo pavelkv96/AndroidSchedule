@@ -18,6 +18,8 @@
   xmlns:tools="http://schemas.android.com/tools"
   package="com.github.pavelkv96.schedule">
 
+  <uses-permission android:name="android.permission.INTERNET" />
+
   <application
     android:allowBackup="true"
     android:icon="@mipmap/ic_launcher"
@@ -25,7 +27,7 @@
     android:name=".App"
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
-    android:theme="@style/AppTheme"
+    android:theme="@style/AppTheme.NoActionBar"
     tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
 
